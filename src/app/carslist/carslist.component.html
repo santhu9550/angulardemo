@@ -1,0 +1,43 @@
+<mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let car of cars"
+        colspan=1
+        rowspan=2
+        style.background="black">
+        <button mat-button (click) = "clickHandler(car)">
+        <mat-card style="width: 350px; height: auto;" class="example-card">
+            <mat-card-header>
+              <img mat-card-avatar style="background-size: cover; " src={{car.image}}/>
+              <mat-card-title>{{car.Name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+           <span style="margin-left: -10px;"> {{car.Origin}}</span>
+           <span style="margin-left: 30px;"> {{car.Horsepower+ " "}}HP</span>
+              </mat-card-content>
+          </mat-card>
+        </button>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+
+  
+  
+
+<!-- 
+  <mat-list>
+    <mat-list-item>Miles_per_Gallon:  <span style="color: crimson;">${Miles_per_Gallon}</span></mat-list-item>
+    <mat-divider></mat-divider> -->
+    <!-- <mat-list-item>Cylinders:  <span style="color: crimson;">${Cylinders}</span></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Displacement:  <span style="color: crimson;">${Displacement}</span></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Horsepower:  <span style="color: crimson;">${Horsepower}</span></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Weight_in_lbs:  <span style="color: crimson;">${Weight_in_lbs}</span></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Acceleration:  <span style="color: crimson;">${Acceleration}</span></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Year:  <span style="color: crimson;">${Year}</span></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Origin:  <span style="color: crimson;">${Origin}</span></mat-list-item> -->
+  <!-- </mat-list> -->

@@ -1,0 +1,46 @@
+<div >
+    <mat-grid-list cols="1" rowHeight="2:1">
+  
+  
+      <mat-grid-tile>
+
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Registration Form</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               
+                <label>Country   :  </label> 
+                <select required [(ngModel)]="selectedCountry.id" (change)="onSelect($event.target.value)">
+                  <option *ngFor="let country of countries" value= {{country.id}}>{{country.name}}</option>
+                </select>
+                
+                <br/><br/>
+                
+                <div>
+                <label>State   :  </label>
+                <select required  [(ngModel)]="selectedState">
+                  <option value="0">--Select--</option>
+                  <option *ngFor="let state of states " value= {{state.name}}>{{state.name}}</option>
+                </select>
+                </div>
+<br/>
+                <div>
+                    
+<label>
+    Date Time:
+    <input required [owlDateTimeTrigger]="dt" [owlDateTime]="dt" [(ngModel)]="selectedDate">
+    <owl-date-time #dt></owl-date-time>
+</label>
+                </div>
+                <br/>
+                <button mat-raised-button color="primary" (click)= "submitForm()" >Submit</button>
+
+              </mat-card-content>
+          </mat-card>
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+
